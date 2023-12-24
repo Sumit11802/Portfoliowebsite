@@ -2,9 +2,16 @@
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    
-</style>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+ 
+
 <div class="slider_area">
     <div class="single_slider  d-flex align-items-center slider_bg_1">
         <div class="container">
@@ -43,7 +50,7 @@
                         I have a experince in working on a diffrent .net MVC project . As a full stack developer I can work from frontend designing to backend coding . Also learnt Cloud computing to run website on a internet.
                     </p>
                     <p>Below is the download button where you can download my updated CV . </p>
-                    <a href="#" class="boxed-btn3-line">Download CV</a>
+                    <a href="#" class="boxed-btn3-line" id="DownloadCV">Download CV</a>
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1 col-md-6">
@@ -281,7 +288,50 @@
 </div>
 <!-- /testimonial_area  -->
 <!-- footer start -->
+<div class="modal" tabindex="-1" role="dialog" id="downloadSuccessModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Download Successful</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Your PDF file has been downloaded successfully!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+    <script>
+        document.getElementById('DownloadCV').addEventListener('click', function() {
+        // Assuming your server-side endpoint is '/download_pdf'
+        var downloadUrl = '/downloadfiles/SumitVermaResume(Full%20stack%20developer).pdf';
+
+        fetch(downloadUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                // Create a link element
+                var link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'SumitVermaResume(Full stack developer).pdf';
+
+        // Append the link to the document
+        document.body.appendChild(link);
+
+        // Trigger the download
+        link.click();
+        alert('CV downloaded successfully!');
+        // Remove the link from the document
+        document.body.removeChild(link);
+            })
+            .catch(error => console.error('Error downloading PDF:', error));
+    });
+</script>
 
 
 

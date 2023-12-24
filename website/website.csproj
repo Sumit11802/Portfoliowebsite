@@ -343,6 +343,7 @@
     <Content Include="asset\scss\_tesmonial.scss" />
     <Content Include="asset\scss\_testmonial.scss" />
     <Content Include="asset\scss\_varriable.scss" />
+    <Content Include="downloadfiles\SumitVermaResume%28Full stack developer%29.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
