@@ -176,6 +176,13 @@
     <Content Include="asset\img\blog\single_blog_4.png" />
     <Content Include="asset\img\blog\single_blog_5.png" />
     <Content Include="asset\img\blog\slide_thumb_1.png" />
+    <Content Include="asset\img\case\c-logo-icon-28402.png" />
+    <Content Include="asset\img\case\css.png" />
+    <Content Include="asset\img\case\firebase.png" />
+    <Content Include="asset\img\case\github.png" />
+    <Content Include="asset\img\case\html.png" />
+    <Content Include="asset\img\case\js.png" />
+    <Content Include="asset\img\case\mysql.png" />
     <Content Include="asset\img\case\testmonial.png" />
     <Content Include="asset\img\comment\comment_1.png" />
     <Content Include="asset\img\comment\comment_2.png" />
