@@ -117,28 +117,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="get_number">
                         <div class="single_links d-flex justify-content-between align-items-center">
-                            <span>Behance</span>
-                            <a href="#"> <i class="fa fa-behance"></i> </a>
+                            <span>Whatsapp </span>
+                            <a href="#"> <i class="fa fa-whatsapp"></i> </a>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="get_github">
                         <div class="single_links d-flex justify-content-between align-items-center">
-                            <span>Dribbble</span>
-                            <a href="#"> <i class="fa fa-dribbble"></i> </a>
+                            <span>GitHub</span>
+                            <a href="#"> <i class="fa fa-github"></i> </a>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="get_Email">
                         <div class="single_links d-flex justify-content-between align-items-center">
-                            <span>Medium</span>
-                            <a href="#"> <i class="fa fa-medium"></i> </a>
+                            <span>Email</span>
+                            <a href=""> <i class="fa fa-envelope"></i> </a>
                         </div>
                     </div>
                     <div class="col-md-3" id="get_linkedin">
                         <div class="single_links d-flex justify-content-between align-items-center">
                             <span>Linkedin</span>
-                            <a href="" > <i class="fa fa-linkedin"></i> </a>
+                            <a href="#" > <i class="fa fa-linkedin"></i> </a>
                         </div>
                     </div>
                 </div>
@@ -203,10 +203,43 @@
     <script>
         document.getElementById('get_linkedin').addEventListener('click', function () {
             // Specify the URL of the website you want to open
-            var websiteUrl = 'https://www.linkedin.com/in/sumit-verma-developer';
+            var websiteUrl = 'https://www.linkedin.com/in/sumit-verma-develpoer/';
 
             // Open the website in a new tab or window
             window.open(websiteUrl, '_blank');
+        });
+
+        document.getElementById('get_Email').addEventListener('click', function () {
+            // Specify your email address
+            var emailAddress = 'sumit.verma1182002@gmail.com';
+
+            // Create the Gmail compose link
+            var gmailLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(emailAddress);
+
+            // Open the link in a new tab
+            window.open(gmailLink, '_blank');
+        });
+
+
+        document.getElementById('get_github').addEventListener('click', function () {
+            // Specify the URL of the website you want to open
+            var websiteUrl = 'https://github.com/Sumit11802/';
+
+            // Open the website in a new tab or window
+            window.open(websiteUrl, '_blank');
+        });
+
+
+        document.getElementById('get_number').addEventListener('click', function () {
+            // Specify the phone number with country code (replace with your actual number)
+            var phoneNumber = '+919372375474';
+
+            // Create the WhatsApp link
+            var whatsappLink = 'https://wa.me/' + encodeURIComponent(phoneNumber);
+
+            // Open the WhatsApp app or web with the specified phone number
+           
+            window.open(whatsappLink, '_blank');
         });
     </script>
 </body>

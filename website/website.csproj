@@ -220,6 +220,7 @@
     <Content Include="asset\img\gallery\4.png" />
     <Content Include="asset\img\gallery\works_banner.png" />
     <Content Include="asset\img\logo.png" />
+    <Content Include="asset\img\Magnify-1s-200px.gif" />
     <Content Include="asset\img\post\next.png" />
     <Content Include="asset\img\post\post_1.png" />
     <Content Include="asset\img\post\post_10.png" />
@@ -249,6 +250,7 @@
     <Content Include="asset\img\team\3.png" />
     <Content Include="asset\img\team\4.png" />
     <Content Include="asset\img\logosumit.png" />
+    <Content Include="asset\img\tenor.gif" />
     <Content Include="asset\js\ajax-form.js" />
     <Content Include="asset\js\bootstrap.min.js" />
     <Content Include="asset\js\contact.js" />
@@ -344,6 +346,7 @@
     <Content Include="asset\scss\_testmonial.scss" />
     <Content Include="asset\scss\_varriable.scss" />
     <Content Include="downloadfiles\SumitVermaResume%28Full stack developer%29.pdf" />
+    <Content Include="asset\scss\loader.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

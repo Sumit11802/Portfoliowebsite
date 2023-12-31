@@ -7,12 +7,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Styles for the splash screen */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* You can customize the background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
+            #splash img {
+                width: 200px; /* Adjust the size of the splash screen image */
+            }
+
+        #content {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        $color-loader: #ce4233;
+
+
+    </style>
 </head>
 
- 
 
-<div class="slider_area">
+
+<div class="slider_area" id="page1">
     <div class="single_slider  d-flex align-items-center slider_bg_1">
         <div class="container">
             <div class="row align-items-center position-relative">
@@ -22,7 +50,7 @@
                             Hi there, I am Sumit <br>
                             <span>Full stack .Net Developer</span>
                         </h3>
-                        <a class="boxed-btn3-line" href="#">View Works</a>
+                        <a class="boxed-btn3-line" href="#" id="ViewWork">View Works</a>
                     </div>
                 </div>
                 <div class="my_img d-none d-lg-block">
@@ -34,7 +62,7 @@
 </div>
 <!-- slider_area_end -->
 
-<div class="download_area">
+<div class="download_area" id="page2">
     <div class="container">
         <div class="row">
             <div class="col-xl-10">
@@ -89,7 +117,7 @@
 </div>
 
 <!-- service_area start  -->
-<div class="service_area">
+<div class="service_area" id="page3">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -105,7 +133,7 @@
                         <img src="img/svg_icon/1.svg" alt="">
                     </div>
                     <h3>
-                        Websites 
+                        Websites
                     </h3>
                     <p>Able to build a website using MVC .net </p>
                 </div>
@@ -127,7 +155,7 @@
                         <img src="img/svg_icon/3.svg" alt="">
                     </div>
                     <h3>
-                        SQL database 
+                        SQL database
                     </h3>
                     <p>able to work on a databse to perform deffrent operation and connection with website </p>
                 </div>
@@ -137,7 +165,7 @@
 </div>
 <!-- service_area end  -->
 <!-- gallery_area start  -->
-<div class="gallery_area">
+<div class="gallery_area" id="page4">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -203,7 +231,7 @@
 </div>
 <!-- gallery_area end  -->
 <!-- testimonial_area  -->
-<div class="testimonial_area ">
+<div class="testimonial_area" id="page5">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -307,8 +335,20 @@
     </div>
 </div>
 
-    <script>
-        document.getElementById('DownloadCV').addEventListener('click', function() {
+<!-- Splash screen container -->
+<div id="splash" >
+    <img src="~/asset/img/Magnify-1s-200px.gif" alt="Splash Screen GIF" width="200" height="200">
+  
+</div>
+
+<!-- Content of the page -->
+
+
+
+
+
+<script>
+    document.getElementById('DownloadCV').addEventListener('click', function () {
         // Assuming your server-side endpoint is '/download_pdf'
         var downloadUrl = '/downloadfiles/SumitVermaResume(Full%20stack%20developer).pdf';
 
@@ -317,21 +357,50 @@
             .then(blob => {
                 // Create a link element
                 var link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = 'SumitVermaResume(Full stack developer).pdf';
+                link.href = window.URL.createObjectURL(blob);
+                link.download = 'SumitVermaResume(Full stack developer).pdf';
 
-        // Append the link to the document
-        document.body.appendChild(link);
+                // Append the link to the document
+                document.body.appendChild(link);
 
-        // Trigger the download
-        link.click();
-        alert('CV downloaded successfully!');
-        // Remove the link from the document
-        document.body.removeChild(link);
+                // Trigger the download
+                link.click();
+                alert('CV downloaded successfully!');
+                // Remove the link from the document
+                document.body.removeChild(link);
             })
             .catch(error => console.error('Error downloading PDF:', error));
     });
 </script>
 
+<script>
+    document.getElementById('ViewWork').addEventListener('click', function () {
+        document.getElementById('gallery_area').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
 
+
+<script>
+    // Function to hide the splash screen and show the content
+    function hideSplash() {
+        document.getElementById('splash').style.display = 'none';
+        document.getElementById('page1').style.display = 'block';
+        document.getElementById('page2').style.display = 'block';
+        document.getElementById('page3').style.display = 'block';
+        document.getElementById('page4').style.display = 'block';
+        document.getElementById('page5').style.display = 'block';
+    }
+
+    // Set a delay (in milliseconds) for the splash screen
+    var splashDelay = 2000; // 3000 milliseconds = 3 seconds
+
+    // Wait for the page to load, then hide the splash screen
+    window.onload = function () {
+        // Display the splash screen
+        document.getElementById('splash').style.display = 'flex';
+
+        // After the delay, hide the splash screen
+        setTimeout(hideSplash, splashDelay);
+    };
+</script>
 
